@@ -453,3 +453,16 @@ span a {
 .gm-style-iw a {
   margin-top: initial;
 }
+
+.error {
+  position: relative;
+  top: 25px;
+  left: 25px;
+  background-color: rgba(255, 0, 0, 0.5);
+  float: left;
+}
+
+.error > h2 {
+  padding: 10px;
+  color: white;
+}
