@@ -21,6 +21,12 @@
       "Jazz",
       "Video Games"
     ],
+    "languages": [
+      "French (Advanced)",
+      "German (Beginner)",
+      "Spanish (Beginner)",
+      "Arabic (Beginner)"
+    ],
     "programLang": [
       "Java",
       "Python",
@@ -33,14 +39,9 @@
     ],
     "libraries": [
       "jQuery",
+      "Liquid",
       "Knockout",
       "Backbone.js"
-    ],
-    "languages": [
-      "French (Advanced)",
-      "German (Beginner)",
-      "Spanish (Beginner)",
-      "Arabic (Beginner)"
     ],
     "programs": [
       "Photoshop",

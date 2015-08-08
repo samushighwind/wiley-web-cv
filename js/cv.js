@@ -241,18 +241,26 @@ var view = {
 			$(".comma:last").css("display", "none");
 		}
 
-		if(bio.programLang) {
+		if(bio.languages) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Languages"));
+			for(i = 0; i < bio.languages.length; i++) {
+				$(".skills:last").append(HTMLskills.replace("%data%", bio.languages[i]));
+			}
+			$(".comma:last").css("display", "none");
+		}
+
+		if(bio.programLang) {
+			$("#header").append(HTMLskillsStart.replace("%data%", "Other Languages"));
 			for(i = 0; i < bio.programLang.length; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.programLang[i]));
 			}
 			$(".comma:last").css("display", "none");
 		}
 
-		if(bio.languages) {
-			$("#header").append(HTMLskillsStart.replace("%data%", "Other Languages"));
-			for(i = 0; i < bio.languages.length; i++) {
-				$(".skills:last").append(HTMLskills.replace("%data%", bio.languages[i]));
+		if(bio.libraries) {
+			$("#header").append(HTMLskillsStart.replace("%data%", "Libraries & Frameworks"));
+			for(i = 0; i < bio.libraries.length; i++) {
+				$(".skills:last").append(HTMLskills.replace("%data%", bio.libraries[i]));
 			}
 			$(".comma:last").css("display", "none");
 		}
