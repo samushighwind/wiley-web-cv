@@ -147,6 +147,13 @@ function initializeMap() {
         locations.push(data.jobs[job].location);
     }
 
+    // removes undefined locations from list
+    for (var i = 0; i < locations.length; i++) {
+      if(!locations[i]) {
+        locations.splice(i, 1);
+      }
+    }
+
     return locations;
   }
 
