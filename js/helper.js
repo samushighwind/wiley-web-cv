@@ -127,22 +127,24 @@ function initializeMap() {
     // initializes an empty array
     var locations = [];
 
+    var data = octopus.getData();
+
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    locations.push(data.bio.contacts.location);
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+    for (var school in data.schools) {
+      locations.push(data.schools[school].location);
     }
 
     // iterates through work locations and appends each location to
     // the locations array
-    for (var job in work.jobs) {
-      var loc = work.jobs[job].location;
+    for (var job in data.jobs) {
+      var loc = data.jobs[job].location;
       // add the location to the array if it's not already added
       if(loc && $.inArray(loc, locations) < 0)
-        locations.push(work.jobs[job].location);
+        locations.push(data.jobs[job].location);
     }
 
     return locations;

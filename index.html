@@ -36,18 +36,10 @@
       <span class="option flex-item"><input type="checkbox" id="sociology" checked>Sociology</input></span>
       <span class="option flex-item"><input type="checkbox" id="other" checked>Other</input></span>
     </div>
-    <div id="education" class='white'>
-      <h2 class="contentLimit">Education</h2>
-    </div>
-    <div id="workExperience" class='black'>
-      <h2 class="contentLimit">Experience</h2>
-    </div>
-    <div id="projects" class='white'>
-      <h2 class="contentLimit">Projects, Papers and Publications</h2>
-    </div>
-    <div id="awards" class='black'>
-      <h2 class="contentLimit">Awards</h2>
-    </div>
+    <div id="education" class='white'></div>
+    <div id="workExperience" class='black'></div>
+    <div id="projects" class='white'></div>
+    <div id="awards" class='black'></div>
     <div id="mapDiv" class='white'>
       <h2 class="contentLimit">Where I've Lived</h2>
     </div>
@@ -57,24 +49,6 @@
   </div>
   <script src="js/cv.js"></script>
   <script type="text/javascript">
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
-    }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
-    }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
-    }
-    if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
-    }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
-    }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('letsConnect').style.display = 'none';
-    }
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
     }
