@@ -510,12 +510,15 @@ var view = {
 	}
 };
 
+// hides 'main' div until AJAX call has completed
+$('#main').hide();
+
 // initializes cv display with data
 // (for testing, use data/cv-data.json and switch fetch_url)
 var fetch_url = "data/cv-data.min.json";
 $.getJSON(fetch_url, function(data) {
+	$('#main').show();
     octopus.init(data);
 }).error(function(e) {
-    $('#main').hide();
     $('body').append('<div class="error"><h2>ERROR: Data missing at ' + fetch_url + '</h2></div>');
 });
