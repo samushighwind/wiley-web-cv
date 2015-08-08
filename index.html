@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ben Wiley - CV</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu|Roboto' rel='stylesheet' type='text/css'>
+  <script src="js/libs/jquery-1.11.3.min.js"></script>
+  <script src="js/helper.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+  <div id="main">
+    <div id="headerBack">
+      <div id="header" class="center-content clearfix contentLimitWide">
+        <div id="jumpbar">
+          <span class="yellow-text">jump to</span>
+          <span><a href="#education">Education</a></span>
+          <span><a href="#workExperience">Experience</a></span>
+          <span><a href="#projects">Projects</a></span>
+          <span><a href="#awards">Awards</a></span>
+          <span><a href="#mapDiv">Map</a></span>
+        </div>
+        <hr/>
+        <ul id="topContacts" class='flex-box'></ul>
+      </div>
+      <a id="downArrow" href="#optionHeader"></a>
+    </div>
+    <div style='clear: both;'></div>
+    <div id="optionHeader" class="contentLimit">Display items relevant to:</div>
+    <div id="options" class="contentLimit flex-box">
+      <span class="option flex-item"><input type="checkbox" id="movements" checked>Organizing/Social Movements</input></span>
+      <span class="option flex-item"><input type="checkbox" id="computers" checked>Computers/Programming</input></span>
+      <span class="option flex-item"><input type="checkbox" id="sociology" checked>Sociology</input></span>
+      <span class="option flex-item"><input type="checkbox" id="other" checked>Other</input></span>
+    </div>
+    <div id="education" class='white'>
+      <h2 class="contentLimit">Education</h2>
+    </div>
+    <div id="workExperience" class='black'>
+      <h2 class="contentLimit">Experience</h2>
+    </div>
+    <div id="projects" class='white'>
+      <h2 class="contentLimit">Projects, Papers and Publications</h2>
+    </div>
+    <div id="awards" class='black'>
+      <h2 class="contentLimit">Awards</h2>
+    </div>
+    <div id="mapDiv" class='white'>
+      <h2 class="contentLimit">Where I've Lived</h2>
+    </div>
+    <div id="letsConnect" class='dark'>
+      <ul id="footerContacts" class="flex-box contentLimitWide"></ul>
+    </div>
+  </div>
+  <script src="js/cv.js"></script>
+  <script type="text/javascript">
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('topContacts').style.display = 'none';
+    }
+    if(document.getElementsByTagName('h1').length === 0) {
+      document.getElementById('header').style.display = 'none';
+    }
+    if(document.getElementsByClassName('work-entry').length === 0) {
+      document.getElementById('workExperience').style.display = 'none';
+    }
+    if(document.getElementsByClassName('project-entry').length === 0) {
+      document.getElementById('projects').style.display = 'none';
+    }
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('education').style.display = 'none';
+    }
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('letsConnect').style.display = 'none';
+    }
+    if(document.getElementById('map') === null) {
+      document.getElementById('mapDiv').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

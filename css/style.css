@@ -1,0 +1,455 @@
+* {
+  padding:0;
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.education-entry, .work-entry, .project-entry, .award-entry {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 8px;
+}
+
+.contentLimit {
+  max-width: 685px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contentLimitWide {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-size: 40px;
+  color: #f8c617;
+  line-height: 48px;
+  display: inline;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+  line-height: 29px;
+  padding: 10px;
+}
+
+h3 {
+  //font-style: italic;
+  font-size: 20px;
+  color: #000000;
+  line-height: 22px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4A4A4A;
+  line-height: 17px;
+}
+
+h2, h3, h4, h5 {
+  padding:10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: 'Ubuntu';
+}
+
+hr {
+  opacity: 0.2;
+  margin-bottom: .5em;
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  float: right;
+}
+
+p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 21px;
+}
+
+a {
+  color: #f8c617;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+  font-family: 'Ubuntu';
+}
+
+.highlights, .courses > li {
+  font-size: 14px;
+  line-height: 21px;
+  padding-bottom: 5px;
+}
+
+.highlights, .courses {
+  list-style-type: circle;
+  padding-left: 20px;
+  padding-top: 8px;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 18px;
+  color: #F3F3F3;
+  line-height: 28px;
+}
+
+#name, #role {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex; 
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+#role {
+  color: white;
+  font-weight: bold;
+}
+
+.skillsH3 {
+  color: #f8c617;
+  //display: none;
+  padding-bottom: 0;
+}
+
+.yellow {
+  background-color: #f8c617;
+}
+
+.yellow-text {
+  color: #f8c617;
+}
+
+.white-text {
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.black {
+  background-color: #000;
+  padding-bottom: 10px;
+  clear:both;
+}
+
+.black p, .black h2, .black li {
+  color: white;
+}
+
+.white {
+  margin-bottom: 10px;
+  clear:both;
+}
+
+.dark-gray {
+  background-color: #4A4A4A;
+}
+
+.dark {
+  background-color: #000;
+}
+
+#headerBack {
+  //background-image: url("../images/sea-fort.jpg");
+  background: #F8C617;
+  background-image: repeating-linear-gradient( 135deg, #f8c617, #f8c617 17px, #fff 17px, #fff 34px );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  //min-height: 100%;
+  //min-height: 100vh;
+  margin-bottom: 20px;
+}
+
+#header {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-clip: content-box;
+  position: relative;
+}
+
+#downArrow {
+  background-image: url("../images/arrow-down-white.png");
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 50%;
+}
+
+#downArrow:hover {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+#photoDescrip {
+  color: black;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 5px;
+  margin-bottom: .5px;
+  //font-size: 0.8em;
+}
+
+.flex-box {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.topics, .skills {
+  -webkit-box-pack: initial;
+  -moz-box-pack: initial;
+  -ms-flex-pack: initial;
+  -webkit-justify-content: initial;
+  justify-content: initial;
+}
+
+#optionHeader {
+  padding-top: 10px;
+  font-weight: bold;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#options {
+  -webkit-justify-content: initial;
+  justify-content: initial;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.option {
+  padding-left: 20px;
+}
+
+.skills > .flex-item > .white-text {
+  padding: 0;
+  line-height: 1.4em;
+}
+
+.white-text > .comma {
+  padding: 0;
+}
+
+#jumpbar {
+  padding-bottom: 5px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+#jumpbar > span > a {
+  font-weight: bold;
+  color: white;
+}
+
+.center-content {
+  padding-top: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2.5%
+}
+
+ul {
+  list-style-type: none;
+}
+
+.biopic {
+  float: left;
+  padding: 10px;
+  width: 175px;
+  display: none;
+}
+
+img {
+  padding: 10px;
+}
+
+/* Bar chart stuff */
+.chart div {
+  font: 10px sans-serif;
+  background-color: #4A4A4A;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  height: 12px;
+  color: white;
+  display: inline-block;
+}
+
+span {
+  padding: 5px;
+}
+
+p a, span a, li a {
+  margin-top: initial;
+  display: initial;
+  font-weight: inherit;
+  font-family: 'Roboto';
+}
+
+#readMoreExperience, #readMoreProjects {
+  font-size: initial;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#experienceTri, #projectsTri {
+  vertical-align: middle;
+}
+
+span a {
+  color: inherit;
+}
+
+#letsConnect {
+  text-align: center;
+}
+
+#letsConnect > h2 {
+  color: #000;
+}
+
+@media only screen and (max-width: 1024px) {
+  #letsConnect {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #letsConnect {
+    margin-top: 10%;
+  }
+  .biopic {
+    width: 150px;
+  }
+  .welcome-message {
+    display: none;
+  }
+  
+  .skillsH3 {
+    padding: 0;
+    padding-left: 10px;
+    font-size: 17px;
+  }
+  .skills > .flex-item > .white-text {
+    font-size: 14px;
+  }
+  
+  #header > .flex-box {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  #jumpbar {
+    text-align: center;
+  }
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+@media only screen and (max-width: 900px) {
+  #downArrow {
+    display: none;
+  }
+}
+
+
+@media only screen and (min-width: 750px) {
+  .skillsH3,
+  .biopic {
+    display: block;
+  }
+
+  #name, #role {
+    display: initial;
+    -webkit-box-pack: initial;
+    -moz-box-pack: initial;
+    -ms-flex-pack: initial;
+    -webkit-justify-content: initial;
+    justify-content: initial;
+  }
+
+  #name {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 785px) {
+  #map {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+::selection {
+  background: #f8c617;
+  color: black;
+}
+::-moz-selection {
+  background: #f8c617;
+  color: black;
+}
+
+.gm-style-iw a {
+  margin-top: initial;
+}
