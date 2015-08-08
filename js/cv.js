@@ -10,10 +10,48 @@ var model = {
 				github: "benwiley4000",
 				location: "Scranton, PA, US"
 			},
-			interests: ["Campaign Organizing", "Programming", "Social Theory", "Movements", "Open-Source", "AI", "Linux", "Android", "Jazz", "Video Games"],
-			programLang: ["Java", "Python", "C++", "C", "JavaScript (+JQuery)", "HTML5", "CSS/SCSS", "PHP"],
-			languages: ["French (Advanced)", "German (Beginner)", "Spanish (Beginner)", "Arabic (Beginner)"],
-			programs: ["Photoshop", "InDesign", "git", "WordPress", "NationBuilder", "SPSS", "ATLAS.ti"],
+			interests: [
+				"Campaign Organizing",
+				"Programming",
+				"Social Theory",
+				"Movements",
+				"Open-Source",
+				"AI",
+				"Linux",
+				"Android",
+				"Jazz",
+				"Video Games"
+			],
+			programLang: [
+				"Java",
+				"Python",
+				"C++",
+				"C",
+				"JavaScript",
+				"HTML5",
+				"CSS/SCSS",
+				"PHP"
+			],
+			libraries: [
+				"jQuery",
+				"Knockout",
+				"Backbone.js"
+			],
+			languages: [
+				"French (Advanced)",
+				"German (Beginner)",
+				"Spanish (Beginner)",
+				"Arabic (Beginner)"
+			],
+			programs: [
+				"Photoshop",
+				"InDesign",
+				"git",
+				"WordPress",
+				"NationBuilder",
+				"SPSS",
+				"ATLAS.ti"
+			],
 			bioPic: "ben-cropped-small.jpg"
 		},
 		education: {
@@ -56,6 +94,10 @@ var model = {
 						{
 							title: "Intro to AJAX",
 							url: "https://www.udacity.com/course/intro-to-ajax--ud110"
+						},
+						{
+							title: "JavaScript Design Patterns",
+							url: "https://www.udacity.com/course/javascript-design-patterns--ud989"
 						}
 					],
 					url: "https://www.udacity.com/",
@@ -181,7 +223,7 @@ var model = {
 					title: "JazzerBot",
 					dates: "2009",
 					description: "A program created for a high school science fair, JazzerBot generates auto-improvised blues tracks based on user preference for length, lead instrument, and part selection. It supports output to connected MIDI devices and export for use by media players and MIDI editors.",
-					url: "https://code.google.com/p/jazzerbot/",
+					url: "https://github.com/benwiley4000/jazzerbot",
 					tags: ["computers", "other"]
 				}
 			]
