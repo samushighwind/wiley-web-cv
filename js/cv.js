@@ -116,6 +116,7 @@ var octopus = {
 };
 
 var view = {
+	MAX_ITEM_DISPLAY: 4,
 	init: function() {
 		// adds event listeners and renders the page content
 
@@ -328,8 +329,8 @@ var view = {
 				// entry header
 				$('#' + sectionID).append(HTMLitemStart.replace("%type%", type));
 				
-				// tags items after #4 as toggle-able
-				if(i >= 4) {
+				// tags items after max as toggle-able
+				if(i >= view.MAX_ITEM_DISPLAY) {
 					$('.' + entryClass + ":last").addClass(moreClass);
 				}
 
@@ -392,7 +393,7 @@ var view = {
 			}
 
 			// adds 'see more' functionality if list exceeds max length
-			if(items.length > 4) {
+			if(items.length > MAX_ITEM_DISPLAY) {
 				view.enableSeeMore(type, color);
 			}
 		}
