@@ -194,32 +194,6 @@ var view = {
 	adjustHeaderSize: function() {
 		$("#headerBack").css("min-height", $(window).height());
 	},
-	enableSeeMore: function(type, color) {
-		// sets up see more/less functionality for long item lists
-
-		// stores type string with first char uppercase
-		var upperType = type.charAt(0).toUpperCase() + type.slice(1);
-
-		// stores IDs/classes used for read more/less
-		var sectionID = type;
-		var readMoreID = "readMore" + upperType;
-		var moreClass = "more-" + type;
-		var triID = type + "Tri";
-
-		// adds 'read more' button
-		$('#' + sectionID).append('<div class="contentLimit"><p id="' + readMoreID + '" class="more-link"><img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more</p></div>');
-
-		// sets up smooth show/hide
-		$('.' + moreClass).hide();
-		$('#' + readMoreID).on('click', function(e) {
-			if($('#' + readMoreID).text() === "see more") {
-				$('#' + readMoreID).html('<img id="' + triID + '" src="images/tri-up-' + color + '.png"/>see less');
-			} else {
-				$('#' + readMoreID).html('<img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more');
-			}
-			$('.' + moreClass).slideToggle(800);
-		});
-	},
 	loadBio: function(bio) {
 		// loads bio information to screen
 
@@ -393,8 +367,25 @@ var view = {
 			}
 
 			// adds 'see more' functionality if list exceeds max length
-			if(items.length > MAX_ITEM_DISPLAY) {
-				view.enableSeeMore(type, color);
+			if(items.length > view.MAX_ITEM_DISPLAY) {
+
+				// stores additional IDs/classes used for read more/less
+				var readMoreID = "readMore" + upperType;
+				var triID = type + "Tri";
+
+				// adds 'read more' button
+				$('#' + sectionID).append('<div class="contentLimit"><p id="' + readMoreID + '" class="more-link"><img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more</p></div>');
+
+				// sets up smooth show/hide
+				$('.' + moreClass).hide();
+				$('#' + readMoreID).on('click', function(e) {
+					if($('#' + readMoreID).text() === "see more") {
+						$('#' + readMoreID).html('<img id="' + triID + '" src="images/tri-up-' + color + '.png"/>see less');
+					} else {
+						$('#' + readMoreID).html('<img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more');
+					}
+					$('.' + moreClass).slideToggle(800);
+				});
 			}
 		}
 	}
