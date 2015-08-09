@@ -204,7 +204,7 @@
   "projects": {
     "projects": [
       {
-        "title": "Narrative Identity as Means for Understanding and Criticizing <i>The Two-Income Trap</i>",
+        "name": "Narrative Identity as Means for Understanding and Criticizing <i>The Two-Income Trap</i>",
         "dates": "May 2015",
         "description": "A criticism of Senator Elizabeth Warren and daughter Amelia Tyagi's <i>The Two-Income Trap</i>, using Margaret R. Somers's narrative identity framework. Discusses Warren's failure to acknowledge the role of race in middle-class families' flight to public schools in suburban neighborhoods. Argues that her policy recommendations, based upon \"middle-class\" identity but not racial identity, could be detrimental to black students.",
         "url": "files/narrative-identity-warren.pdf",
@@ -214,7 +214,7 @@
         ]
       },
       {
-        "title": "Implementing an Ant Swarm Intelligence-Based Approach to Balancing Communication Network Loads",
+        "name": "Implementing an Ant Swarm Intelligence-Based Approach to Balancing Communication Network Loads",
         "dates": "May 2015",
         "description": "A write-up of a project mimicking the pheromone-assisted behavior of foraging ant colonies, for an algorithm which balances signal loads in a simulated communication network. <i>(With Tommy Rhodes.)</i>",
         "url": "files/ant-intelligence.pdf",
@@ -223,7 +223,7 @@
         ]
       },
       {
-        "title": "Is Social Movement Organizing Easier in the Age of Social Media?",
+        "name": "Is Social Movement Organizing Easier in the Age of Social Media?",
         "dates": "April 2015",
         "description": "A discussion of new assets and difficulties social movements face in the age of social media, using examples of the Zapatistas, Anonymous, the Arab Spring, Occupy, and Kony 2012.",
         "url": "files/goffman-beck.pdf",
@@ -234,7 +234,7 @@
         ]
       },
       {
-        "title": "Erving Goffman and Ulrich Beck: Interaction Order or New World Order?",
+        "name": "Erving Goffman and Ulrich Beck: Interaction Order or New World Order?",
         "dates": "December 2014",
         "description": "A paper examining untapped similarities between the work of microsociologist Erving Goffman and that of macrosociologist Ulrich Beck. It covers themes of impression management, social construction, individualization, and social change.",
         "url": "files/goffman-beck.pdf",
@@ -244,7 +244,7 @@
         ]
       },
       {
-        "title": "Indigenous Groups in Papua New Guinea Ready For War with ExxonMobil",
+        "name": "Indigenous Groups in Papua New Guinea Ready For War with ExxonMobil",
         "dates": "May 2014",
         "description": "A blog post compiling troubling information surrounding ExxonMobil's $19 billion, U.S.-assisted liquefied natural gas (LNG) operation in Papua New Guinea.",
         "url": "http://benwiley4000.kinja.com/indigenous-groups-in-papua-new-guinea-ready-for-war-wit-1576026036",
@@ -253,7 +253,7 @@
         ]
       },
       {
-        "title": "Can't They Just Get Along? (not quite)",
+        "name": "Can't They Just Get Along? (not quite)",
         "dates": "May 2013",
         "description": "Confronting and then sidestepping Karl Marx and Michel Foucault\u2019s irreconcilable differences in search for a sound theory of social change.",
         "url": "files/marx-foucault.pdf",
@@ -263,7 +263,7 @@
         ]
       },
       {
-        "title": "JazzerBot",
+        "name": "JazzerBot",
         "dates": "2009",
         "description": "A program created for a high school science fair, JazzerBot generates auto-improvised blues tracks based on user preference for length, lead instrument, and part selection. It supports output to connected MIDI devices and export for use by media players and MIDI editors.",
         "url": "https://github.com/benwiley4000/jazzerbot",
@@ -277,7 +277,7 @@
   "awards": {
     "awards": [
       {
-        "title": "Davidson College Civic Engagement Award",
+        "name": "Davidson College Civic Engagement Award",
         "dates": "April 2013",
         "description": "Awarded by the Davidson College Center of Civic Engagement for \"unparalleled commitment to social justice advocacy in the Davidson College community.\"",
         "url": "http://www.davidson.edu/student-life/civic-engagement",
@@ -286,7 +286,7 @@
         ]
       },
       {
-        "title": "Top-60 finisher in IBM Master the Mainframe Competition",
+        "name": "Top-60 finisher in IBM Master the Mainframe Competition",
         "dates": "October 2012",
         "description": "One of the first 60 students to complete part 2 of IBM's Master the Mainframe competition, which has participants remotely log into an IBM mainframe computer and complete a series of increasingly difficult tasks.",
         "url": "http://www-03.ibm.com/systems/z/education/academic/masterthemainframe/",
@@ -295,7 +295,7 @@
         ]
       },
       {
-        "title": "Student Activist of the Year (Amnesty International USA, Midwest)",
+        "name": "Student Activist of the Year (Amnesty International USA, Midwest)",
         "dates": "2010",
         "description": "Awarded for work on organizing a benefit concert with a student Amnesty International chapter in Louisville, Kentucky.",
         "url": "http://www.amnestyusa.org/events/regional-conferences/midwest-regional-conference",

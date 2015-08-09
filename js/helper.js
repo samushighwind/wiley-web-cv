@@ -5,6 +5,7 @@ Cameron Pittman
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span id="role">%data%</span>';
 
+// begin bio fields
 var HTMLcontactGeneric = '<li class="flex-item"><span class="yellow-text">%contact%</span><span class="white-text %class%"><a href="#" target="_blank">%data%</a></span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="yellow-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="yellow-text">email</span><span class="white-text">%data%</span></li>';
@@ -18,49 +19,29 @@ var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 class="skillsH3">%data%</h3><ul class="flex-box skills"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%<span class="comma">,&nbsp;</span></span></li>';
+// end bio fields
 
-var HTMLworkStart = '<div class="work-entry contentLimit"></div>';
-var HTMLworkEmployer = '<a href="#" target="_blank">%data%';
-var HTMLworkTitle = ' - %data%</a>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
-var HTMLworkHighlights = '<p><br><b>Highlights:</b></p><ul class="highlights"></ul>';
-var HTMLworkHighlight = '<li>%data%</li>';
-
-var HTMLprojectStart = '<div class="project-entry contentLimit"></div>';
-var HTMLprojectTitle = '<a href="#" target="_blank">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
-
-var HTMLawardStart = '<div class="award-entry contentLimit"></div>';
-var HTMLawardTitle = '<a href="#" target="_blank">%data%</a>';
-var HTMLawardDates = '<div class="date-text">%data%</div>';
-var HTMLawardDescription = '<p><br>%data%</p>';
-
-var HTMLschoolStart = '<div class="education-entry contentLimit"></div>';
-var HTMLschoolName = '<a href="#" target="_blank">%data%';
-var HTMLschoolDegree = ' - %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<p><br><b>Major</b>: %data%</p>';
-var HTMLschoolMinor = '<p><b>Minor</b>: %data%</p>';
-var HTMLschoolDescription = '<p>%data%</p>';
-var HTMLschoolCourses = '<p><br><b>Courses completed:</b></p><ul class="courses"></ul>';
+// begin general fields
+var HTMLitemStart = '<div class="%type%-entry contentLimit"></div>';
+var HTMLitemHeading = '<a href="#" target="_blank">%data%';
+var HTMLitemTagline = ' - %data%</a>';
+var HTMLitemDates = '<div class="date-text">%data%</div>';
+var HTMLitemLocation = '<div class="location-text">%data%</div><br>';
+var HTMLitemAttribute = '<p><b>%label%</b>: %data%</p>';
+var HTMLitemDescription = '<p>%data%</p>';
+var HTMLschoolCourses = '<p><b>Courses completed:</b></p><ul class="courses"></ul>';
 var HTMLschoolCourse = '<li><a href="#" target="_blank">%data%</a></li>';
+var HTMLexprHighlights = '<p><b>Highlights:</b></p><ul class="highlights"></ul>';
+var HTMLexprHighlight = '<li>%data%</li>';
+var HTMLprojectImage = '<img src="%data%">';
+// end general fields
 
-var HTMLonlineClasses = '<h3 class="contentLimit">Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#" target="_blank">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
-
+// begin map fields
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map" class="contentLimit"></div>';
 
 var HTMLinfoWindow = '<a href="https://www.google.com/maps/place/%data%" target="_blank">%name%</a>';
-
+// end map fields
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.

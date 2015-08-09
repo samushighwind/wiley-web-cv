@@ -8,7 +8,7 @@
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry, .award-entry {
+.education-entry, .experience-entry, .project-entry, .award-entry {
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 8px;

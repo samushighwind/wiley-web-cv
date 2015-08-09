@@ -179,13 +179,45 @@ var view = {
 			var data = octopus.getData();
 		}
 
+		view.loadSection("education", data.schools, "black");
+		view.loadSection("experience", data.jobs, "white");
+		view.loadSection("projects", data.projects, "black");
+		view.loadSection("awards", data.awards, "white");
+		/*
 		view.loadEducation(data.schools);
-		view.loadWork(data.jobs);
+		view.loadExperience(data.jobs);
 		view.loadProjects(data.projects);
 		view.loadAwards(data.awards);
+		*/
 	},
 	adjustHeaderSize: function() {
 		$("#headerBack").css("min-height", $(window).height());
+	},
+	enableSeeMore: function(type, color) {
+		// sets up see more/less functionality for long item lists
+
+		// stores type string with first char uppercase
+		var upperType = type.charAt(0).toUpperCase() + type.slice(1);
+
+		// stores IDs/classes used for read more/less
+		var sectionID = type;
+		var readMoreID = "readMore" + upperType;
+		var moreClass = "more-" + type;
+		var triID = type + "Tri";
+
+		// adds 'read more' button
+		$('#' + sectionID).append('<div class="contentLimit"><p id="' + readMoreID + '" class="more-link"><img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more</p></div>');
+
+		// sets up smooth show/hide
+		$('.' + moreClass).hide();
+		$('#' + readMoreID).on('click', function(e) {
+			if($('#' + readMoreID).text() === "see more") {
+				$('#' + readMoreID).html('<img id="' + triID + '" src="images/tri-up-' + color + '.png"/>see less');
+			} else {
+				$('#' + readMoreID).html('<img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more');
+			}
+			$('.' + moreClass).slideToggle(800);
+		});
 	},
 	loadBio: function(bio) {
 		// loads bio information to screen
@@ -202,23 +234,21 @@ var view = {
 		}
 		$("#header").prepend(HTMLheaderName.replace("%data%", intlName(bio.name)));
 
-		var keys = Object.keys(bio.contacts);
-		for(i = 0; i < keys.length; i++) {
-			var data = bio.contacts[keys[i]];
-			var key = keys[i];
+		for(var contact in bio.contacts) {
+			var data = bio.contacts[contact];
 
-			formattedContact = HTMLcontactGeneric.replace("%data%", data).replace("%contact%", key).replace("%class%", key);
+			formattedContact = HTMLcontactGeneric.replace("%data%", data).replace("%contact%", contact).replace("%class%", contact);
 
-			if(key === "email") {
+			if(contact === "email") {
 				formattedContact = formattedContact.replace("#", "mailto:" + data);
-			} else if(key === "mobile") {
+			} else if(contact === "mobile") {
 				formattedContact = formattedContact.replace("#", "tel:+" + data);
-			} else if(key === "location") {
+			} else if(contact === "location") {
 				formattedContact = formattedContact.replace("#", "https://www.google.com/maps/place/" + data);
-			} else if(key === 'facebook' || key === 'twitter') {
-				formattedContact = formattedContact.replace("#", "http://www." + key + ".com/" + data.slice(1));
+			} else if(contact === 'facebook' || contact === 'twitter') {
+				formattedContact = formattedContact.replace("#", "http://www." + contact + ".com/" + data.slice(1));
 			} else {
-				formattedContact = formattedContact.replace("#", "http://www." + key + ".com/" + data);
+				formattedContact = formattedContact.replace("#", "http://www." + contact + ".com/" + data);
 			}
 
 			$("#topContacts").append(formattedContact);
@@ -235,7 +265,7 @@ var view = {
 
 		if(bio.interests) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Interests"));
-			for(i = 0; i < bio.interests.length; i++) {
+			for(var i = 0; i < bio.interests.length; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.interests[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -243,7 +273,7 @@ var view = {
 
 		if(bio.languages) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Languages"));
-			for(i = 0; i < bio.languages.length; i++) {
+			for(var i = 0; i < bio.languages.length; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.languages[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -251,7 +281,7 @@ var view = {
 
 		if(bio.programLang) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Other Languages"));
-			for(i = 0; i < bio.programLang.length; i++) {
+			for(var i = 0; i < bio.programLang.length; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.programLang[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -259,7 +289,7 @@ var view = {
 
 		if(bio.libraries) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Libraries & Frameworks"));
-			for(i = 0; i < bio.libraries.length; i++) {
+			for(var i = 0; i < bio.libraries.length; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.libraries[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -267,245 +297,104 @@ var view = {
 
 		if(bio.programs) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Programs"));
-			for(i = 0; i < bio.programs.length; i++) {
+			for(var i = 0; i < bio.programs.length; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.programs[i]));
 			}
 			$(".comma:last").css("display", "none");
 		}
 	},
-	loadEducation: function(schools) {
-		// loads education information to screen
+	loadSection: function(type, items, color) {
+		// loads section information to screen
+
+		var upperType = type.charAt(0).toUpperCase() + type.slice(1);
+		var sectionID = type;
+		var entryClass = type + "-entry";
+		var moreClass = "more-" + type;
 
 		// places section title and clears all other section content 
-		$("#education").html('<h2 class="contentLimit">Education</h2>');
+		$('#' + sectionID).html('<h2 class="contentLimit">' + upperType + '</h2>');
 
-		if(schools.length === 0) {
+		if(items.length === 0) {
+
 			// if list is empty, a corresponding notification is displayed.
-			$("#education").append('<p class="contentLimit">None selected.</p>');
+			$('#' + sectionID).append('<p class="contentLimit">None selected.</p>');
+
 		} else {
 
-			for(i = 0; i < schools.length; i++) {
+			for(var i = 0; i < items.length; i++) {
 
-				$("#education").append(HTMLschoolStart);
+				var item = items[i];
+
+				// entry header
+				$('#' + sectionID).append(HTMLitemStart.replace("%type%", type));
 				
 				// tags items after #4 as toggle-able
 				if(i >= 4) {
-					$(".education-entry:last").addClass("more-education");
+					$('.' + entryClass + ":last").addClass(moreClass);
 				}
 
-				var formattedName = HTMLschoolName.replace("%data%", schools[i].name).replace("#", schools[i].url);
-				var formattedDegree = "";
-				if(schools[i].degree) {
-					formattedDegree = HTMLschoolDegree.replace("%data%", schools[i].degree);
+				var headingText = item.name || item.employer;
+				var formattedHeading = HTMLitemHeading.replace("%data%", headingText).replace("#", item.url);
+
+				var taglineText = item.degree || item.title;
+				var formattedTagline = "";
+				if(taglineText) {
+					formattedTagline = HTMLitemTagline.replace("%data%", taglineText);
 				}
-				else if(schools[i].title)
-					formattedDegree = HTMLschoolDegree.replace("%data%", schools[i].title);
-				$(".education-entry:last").append(formattedName + formattedDegree);
+				$('.' + entryClass + ":last").append(formattedHeading + formattedTagline);
 
-				var formattedDates = HTMLschoolDates.replace("%data%", schools[i].dates);
-				$(".education-entry:last").append(formattedDates);
-
-				if(schools[i].location) {
-					var formattedLocation = HTMLschoolLocation.replace("%data%", schools[i].location);
-					$(".education-entry:last").append(formattedLocation);
+				if(item.dates) {
+					var formattedDates = HTMLitemDates.replace("%data%", item.dates);
+					$('.' + entryClass + ":last").append(formattedDates);
 				}
 
-				if(schools[i].major) {
-					var formattedMajor = HTMLschoolMajor.replace("%data%", schools[i].major);
-					$(".education-entry:last").append(formattedMajor);
+				if(item.location) {
+					var formattedLocation = HTMLitemLocation.replace("%data%", item.location);
+					$('.' + entryClass + ":last").append(formattedLocation);
+				} else {
+					$('.' + entryClass + ":last").append('<br>');
 				}
 
-				if(schools[i].minor) {
-					var formattedMinor = HTMLschoolMinor.replace("%data%", schools[i].minor);
-					$(".education-entry:last").append(formattedMinor);
+				function appendAttribute(label) {
+					var upperLabel = label.charAt(0).toUpperCase() + label.slice(1);
+					var formattedAttr = HTMLitemAttribute.replace("%data%", item[label]).replace("%label%", upperLabel);
+					$('.' + entryClass + ":last").append(formattedAttr);
 				}
 
-				if(schools[i].description) {
-					if(!(schools[i].major || schools[i].minor))
-						$(".education-entry:last").append('<br>');
-					$(".education-entry:last").append(HTMLschoolDescription.replace("%data%", schools[i].description));
+				if(item.major) {
+					appendAttribute("major");
+				}
+				if(item.minor) {
+					appendAttribute("minor");
 				}
 
-				if(schools[i].courses) {
+				if(item.description) {
+					var formattedDescription = HTMLitemDescription.replace("%data%", item.description);
+					$('.' + entryClass + ":last").append(formattedDescription);
+				}
 
-					$(".education-entry:last").append(HTMLschoolCourses);
-					for(j = 0; j < schools[i].courses.length; j++) {
-						$(".education-entry .courses:last").append(HTMLschoolCourse.replace("%data%", schools[i].courses[j].title).replace("#", schools[i].courses[j].url));
+				if(item.courses) {
+					$('.' + entryClass + ":last").append(HTMLschoolCourses);
+					for(var j = 0; j < item.courses.length; j++) {
+						var course = item.courses[j];
+						var formattedCourse = HTMLschoolCourse.replace("%data%", course.title).replace("#", course.url);
+						$("." + entryClass + " .courses:last").append(formattedCourse);
+					}
+				}
+
+				if(item.highlights) {
+					$('.' + entryClass + ":last").append(HTMLexprHighlights);
+					for(var j = 0; j < item.highlights.length; j++) {
+						var formattedHighlight = HTMLexprHighlight.replace("%data%", item.highlights[j]);
+						$("." + entryClass + " .highlights:last").append(formattedHighlight);
 					}
 				}
 			}
 
-			// adds 'read more' button if the list is over 4 items
-			if(schools.length > 4) {
-				$("#education").append('<div class="contentLimit"><p id="readMoreEducation" class="more-link"><img id="educationTri" src="images/tri-down-white.png"/>see more</p></div>');
+			// adds 'see more' functionality if list exceeds max length
+			if(items.length > 4) {
+				view.enableSeeMore(type, color);
 			}
-
-			// sets up show/hide functionality
-			$(".more-education").hide();
-			$("#readMoreEducation").on('click', function(e) {
-				if($("#readMoreEducation").text() === "see more") {
-					$("#readMoreEducation").html('<img id="educationTri" src="images/tri-up-white.png"/>see less');
-				} else {
-					$("#readMoreEducation").html('<img id="educationTri" src="images/tri-down-white.png"/>see more');
-				}
-				$(".more-education").slideToggle(800);
-			});
-		}
-	},
-	loadWork: function(jobs) {
-		// loads work information to screen
-
-		// places section title and clears all other section content 
-		$("#workExperience").html('<h2 class="contentLimit">Experience</h2>');
-
-		if(jobs.length === 0) {
-			// if list is empty, a corresponding notification is displayed.
-			$("#workExperience").append('<p class="contentLimit">None selected.</p>');
-		} else {
-
-			for(i = 0; i < jobs.length; i++) {
-
-				$("#workExperience").append(HTMLworkStart);
-				
-				// tags items after #4 as toggle-able
-				if(i >= 4) {
-					$(".work-entry:last").addClass("more-experience");
-				}
-
-				var formattedEmployer = HTMLworkEmployer.replace("%data%", jobs[i].employer).replace("#", jobs[i].url);
-				var formattedTitle = HTMLworkTitle.replace("%data%", jobs[i].title);
-				$(".work-entry:last").append(formattedEmployer + formattedTitle);
-
-				if(jobs[i].location) {
-					var formattedLocation = HTMLworkLocation.replace("%data%", jobs[i].location);
-					$(".work-entry:last").append(formattedLocation);
-				}
-
-				var formattedDates = HTMLworkDates.replace("%data%", jobs[i].dates);
-				$(".work-entry:last").append(formattedDates);
-
-				if(jobs[i].description) {
-					var formattedDescription = HTMLworkDescription.replace("%data%", jobs[i].description);
-					$(".work-entry:last").append(formattedDescription);
-				}
-
-				if(jobs[i].highlights) {
-					$(".work-entry:last").append(HTMLworkHighlights);
-					for(j = 0; j < jobs[i].highlights.length; j++) {
-						$(".work-entry .highlights:last").append(HTMLworkHighlight.replace("%data%", jobs[i].highlights[j]));
-					}
-				}
-			}
-
-			// adds 'read more' button if the list is over 4 items
-			if(jobs.length > 4) {
-				$("#workExperience").append('<div class="contentLimit"><p id="readMoreExperience" class="more-link"><img id="experienceTri" src="images/tri-down-white.png"/>see more</p></div>');
-			}
-
-			// sets up show/hide functionality
-			$(".more-experience").hide();
-			$("#readMoreExperience").on('click', function(e) {
-				if($("#readMoreExperience").text() === "see more") {
-					$("#readMoreExperience").html('<img id="experienceTri" src="images/tri-up-white.png"/>see less');
-				} else {
-					$("#readMoreExperience").html('<img id="experienceTri" src="images/tri-down-white.png"/>see more');
-				}
-				$(".more-experience").slideToggle(800);
-			});
-		}
-	},
-	loadProjects: function(projects) {
-		// loads projects information to screen
-
-		// places section title and clears all other section content 
-		$("#projects").html('<h2 class="contentLimit">Projects, Papers and Publications</h2>');
-
-		if(projects.length === 0) {
-			// if list is empty, a corresponding notification is displayed.
-			$("#projects").append('<p class="contentLimit">None selected.</p>');
-		} else {
-
-			for(i = 0; i < projects.length; i++) {
-
-				$("#projects").append(HTMLprojectStart);
-				
-				// tags items after #4 as toggle-able
-				if(i >= 4) {
-					$(".project-entry:last").addClass("more-projects");
-				}
-
-				var formattedTitle = HTMLprojectTitle.replace("%data%", projects[i].title).replace("#", projects[i].url);
-				$(".project-entry:last").append(formattedTitle);
-
-				var formattedDates = HTMLprojectDates.replace("%data%", projects[i].dates);
-				$(".project-entry:last").append(formattedDates);
-
-				var formattedDescription = HTMLprojectDescription.replace("%data%", projects[i].description);
-				$(".project-entry:last").append(formattedDescription);
-			}
-
-			// adds 'read more' button if the list is over 4 items
-			if(projects.length > 4) {
-				$("#projects").append('<div class="contentLimit"><p id="readMoreProjects" class="more-link"><img id="projectsTri" src="images/tri-down-black.png"/>see more</p></div>');
-			}
-
-			// sets up show/hide functionality
-			$(".more-projects").hide();
-			$("#readMoreProjects").on('click', function(e) {
-				if($("#readMoreProjects").text() === "see more") {
-					$("#readMoreProjects").html('<img id="projectsTri" src="images/tri-up-black.png"/>see less');
-				} else {
-					$("#readMoreProjects").html('<img id="projectsTri" src="images/tri-down-black.png"/>see more');
-				}
-				$(".more-projects").slideToggle(800);
-			});
-		}
-	},
-	loadAwards: function(awards) {
-		// loads awards information to screen
-
-		// places section title and clears all other section content 
-		$("#awards").html('<h2 class="contentLimit">Awards</h2>');
-
-		if(awards.length === 0) {
-			// if list is empty, a corresponding notification is displayed.
-			$("#awards").append('<p class="contentLimit">None selected.</p>');
-		} else {
-
-			for(i = 0; i < awards.length; i++) {
-
-				$("#awards").append(HTMLawardStart);
-				
-				// tags items after #4 as toggle-able
-				if(i >= 4) {
-					$(".award-entry:last").addClass("more-awards");
-				}
-
-				var formattedTitle = HTMLawardTitle.replace("%data%", awards[i].title).replace("#", awards[i].url);
-				$(".award-entry:last").append(formattedTitle);
-
-				var formattedDates = HTMLawardDates.replace("%data%", awards[i].dates);
-				$(".award-entry:last").append(formattedDates);
-
-				var formattedDescription = HTMLawardDescription.replace("%data%", awards[i].description);
-				$(".award-entry:last").append(formattedDescription);
-			}
-
-			// adds 'read more' button if the list is over 4 items
-			if(awards.length > 4) {
-				$("#awards").append('<div class="contentLimit"><p id="readMoreAwards" class="more-link"><img id="awardsTri" src="images/tri-down-black.png"/>see more</p></div>');
-			}
-
-			// sets up show/hide functionality
-			$(".more-awards").hide();
-			$("#readMoreAwads").on('click', function(e) {
-				if($("#readMoreAwards").text() === "see more") {
-					$("#readMoreAwards").html('<img id="awardsTri" src="images/tri-up-black.png"/>see less');
-				} else {
-					$("#readMoreAwards").html('<img id="awardsTri" src="images/tri-down-black.png"/>see more');
-				}
-				$(".more-awards").slideToggle(800);
-			});
 		}
 	}
 };
