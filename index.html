@@ -5,9 +5,11 @@
   <title>Ben Wiley - CV</title>
   <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
   <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/fixedsticky.css" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Ubuntu|Roboto' rel='stylesheet' type='text/css'>
   <script src="js/libs/jquery-1.11.3.min.js"></script>
   <script src="js/helper.js"></script>
+  <script src="js/libs/fixedsticky.js"></script>
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
   <meta name="viewport" content="width=device-width">
 </head>
@@ -29,12 +31,14 @@
       <a id="downArrow" href="#optionHeader"></a>
     </div>
     <div style='clear: both;'></div>
-    <div id="optionHeader" class="contentLimit">Display items relevant to:</div>
-    <div id="options" class="contentLimit flex-box">
-      <span class="option flex-item"><input type="checkbox" id="movements" checked>Organizing/Social Movements</input></span>
-      <span class="option flex-item"><input type="checkbox" id="computers" checked>Computers/Programming</input></span>
-      <span class="option flex-item"><input type="checkbox" id="sociology" checked>Sociology</input></span>
-      <span class="option flex-item"><input type="checkbox" id="other" checked>Other</input></span>
+    <div id="option-container" class="fixedsticky">
+      <div id="optionHeader" class="contentLimit">Display items relevant to:</div>
+      <div id="options" class="contentLimit flex-box">
+        <span class="option flex-item"><input type="checkbox" id="movements" checked>Organizing/Social Movements</input></span>
+        <span class="option flex-item"><input type="checkbox" id="computers" checked>Computers/Programming</input></span>
+        <span class="option flex-item"><input type="checkbox" id="sociology" checked>Sociology</input></span>
+        <span class="option flex-item"><input type="checkbox" id="other" checked>Other</input></span>
+      </div>
     </div>
     <div id="education" class='white'></div>
     <div id="experience" class='black'></div>
@@ -47,6 +51,9 @@
       <ul id="footerContacts" class="flex-box contentLimitWide"></ul>
     </div>
   </div>
+  <script type="text/javascript">
+    $('#option-container').fixedsticky();
+  </script>
   <script src="js/cv.js"></script>
 </body>
 </html>
