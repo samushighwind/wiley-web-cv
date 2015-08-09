@@ -1,5 +1,7 @@
 /*
-Cameron Pittman
+ * Based on code by Cameron Pittman
+ * HTML field generalization by Ben Wiley
+ * 2015
 */
 
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
@@ -7,16 +9,7 @@ var HTMLheaderRole = '<span id="role">%data%</span>';
 
 // begin bio fields
 var HTMLcontactGeneric = '<li class="flex-item"><span class="yellow-text">%contact%</span><span class="white-text %class%"><a href="#" target="_blank">%data%</a></span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="yellow-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="yellow-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="yellow-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="yellow-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="yellow-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="yellow-text">location</span><span class="white-text">%data%</span></li>';
-
 var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
-
 var HTMLskillsStart = '<h3 class="skillsH3">%data%</h3><ul class="flex-box skills"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%<span class="comma">,&nbsp;</span></span></li>';
 // end bio fields
@@ -37,41 +30,9 @@ var HTMLprojectImage = '<img src="%data%">';
 // end general fields
 
 // begin map fields
-var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map" class="contentLimit"></div>';
-
 var HTMLinfoWindow = '<a href="https://www.google.com/maps/place/%data%" target="_blank">%name%</a>';
 // end map fields
-
-/*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
-$(document).ready(function() {
-  $('button').click(function() {
-    var iName = inName() || function(){};
-    $('#name').html(iName);  
-  });
-});
-
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
-*/
-clickLocations = [];
-
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-}
-
-$(document).click(function(loc) {
-  // your code goes here!
-});
-
 
 
 /*

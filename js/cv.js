@@ -1,3 +1,8 @@
+/*
+ * Ben Wiley
+ * 2015
+ */
+
 var model = {
 	init: function(data) {
 		// initializes model
