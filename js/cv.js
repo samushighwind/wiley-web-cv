@@ -189,12 +189,6 @@ var view = {
 		view.loadSection("experience", data.jobs, "white");
 		view.loadSection("projects", data.projects, "black");
 		view.loadSection("awards", data.awards, "white");
-		/*
-		view.loadEducation(data.schools);
-		view.loadExperience(data.jobs);
-		view.loadProjects(data.projects);
-		view.loadAwards(data.awards);
-		*/
 	},
 	adjustHeaderSize: function() {
 		$("#headerBack").css("min-height", $(window).height());
