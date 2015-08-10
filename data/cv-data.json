@@ -40,7 +40,7 @@
     "libraries": [
       "jQuery",
       "Liquid",
-      "Knockout",
+      "Knockout.js",
       "Backbone.js"
     ],
     "programs": [
