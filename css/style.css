@@ -417,8 +417,14 @@ span a {
     padding-top: 5px;
     padding-bottom: 5px;
   }
+
   #jumpbar {
     text-align: center;
+  }
+
+  .section-frame > .black-border,
+  .section-frame > .white-border {
+    border: none;
   }
 }
 
