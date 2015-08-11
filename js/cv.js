@@ -128,7 +128,7 @@ var view = {
 		// adjusts the height of the header section to fit the changing size of the window.
 		$(window).resize(function() {
 			view.adjustHeaderSize();
-			view.adjustSectionFiller();
+			view.adjustFiller();
 		});
 
 		// creates smooth transitions when following links to ids on the page
@@ -155,7 +155,7 @@ var view = {
 
 		view.render();
 		view.adjustHeaderSize();
-		view.adjustSectionFiller();
+		view.adjustFiller();
 	},
 	render: function() {
 		// renders content on page (function called only once)
@@ -192,12 +192,14 @@ var view = {
 		view.loadSection("projects", data.projects, "black");
 		view.loadSection("awards", data.awards, "white");
 	},
-	adjustSectionFiller: function() {
-		var filler = $('#floating-head').height() + 10;
-		$(".section-head").css('padding-top', filler + 'px');
+	adjustFiller: function() {
+		var filler = $('#floating-head').height();
+		var sectionFiller = filler + 10;
+		$('#headerBack').css('padding-top', filler + 'px');
+		$('.section-head').css('padding-top', sectionFiller + 'px');
 	},
 	adjustHeaderSize: function() {
-		$("#headerBack").css(
+		$('#headerBack').css(
 			"min-height",
 			$(window).height() - $('#floating-head').height()
 		);
