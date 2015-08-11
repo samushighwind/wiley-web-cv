@@ -128,6 +128,7 @@ var view = {
 		// adjusts the height of the header section to fit the changing size of the window.
 		$(window).resize(function() {
 			view.adjustHeaderSize();
+			view.adjustSectionFiller();
 		});
 
 		// creates smooth transitions when following links to ids on the page
