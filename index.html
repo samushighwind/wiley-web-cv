@@ -15,23 +15,28 @@
 </head>
 <body>
   <div id="main">
+    <div id="floating-head" class="fixedsticky">
+      <div id="title"></div>
+      <div id="jumpbar">
+        <span class="yellow-text">jump to</span>
+        <span><a href="#education-frame">Education</a></span>
+        <span><a href="#experience-frame">Experience</a></span>
+        <span><a href="#projects-frame">Projects</a></span>
+        <span><a href="#awards-frame">Awards</a></span>
+        <span><a href="#map-frame">Map</a></span>
+        <span><a href="#main">Top</a></span>
+      </div>
+    </div>
     <div id="headerBack">
-      <div id="header" class="center-content clearfix contentLimitWide">
-        <div id="jumpbar">
-          <span class="yellow-text">jump to</span>
-          <span><a href="#education">Education</a></span>
-          <span><a href="#experience">Experience</a></span>
-          <span><a href="#projects">Projects</a></span>
-          <span><a href="#awards">Awards</a></span>
-          <span><a href="#mapDiv">Map</a></span>
+      <div id="header-frame" class="center-content clearfix contentLimitWide">
+        <div id="header" class="white-border">
+          <ul id="topContacts" class='flex-box'></ul>
         </div>
-        <hr/>
-        <ul id="topContacts" class='flex-box'></ul>
       </div>
       <a id="downArrow" href="#optionHeader" style="display:none"></a>
     </div>
     <div style='clear: both;'></div>
-    <div id="option-container" class="fixedsticky">
+    <div id="option-container" class="fixedsticky" style="display:none">
       <div id="optionHeader" class="contentLimit">Display items relevant to:</div>
       <div id="options" class="contentLimit flex-box">
         <span class="option flex-item"><input type="checkbox" id="movements" checked>Organizing/Social Movements</input></span>
@@ -40,18 +45,32 @@
         <span class="option flex-item"><input type="checkbox" id="other" checked>Other</input></span>
       </div>
     </div>
-    <div id="education" class='white'></div>
-    <div id="experience" class='black'></div>
-    <div id="projects" class='white'></div>
-    <div id="awards" class='black'></div>
-    <div id="mapDiv" class='white'>
-      <h2 class="contentLimit">Where I've Lived</h2>
+    <div id="education-frame" class="white">
+      <h2 class="contentLimit section-head">Education</h2>
+      <div id="education" class="black-border contentLimit"></div>
+    </div>
+    <div id="experience-frame" class="black">
+      <h2 class="contentLimit section-head">Experience</h2>
+      <div id="experience" class="white-border contentLimit"></div>
+    </div>
+    <div id="projects-frame" class="white">
+      <h2 class="contentLimit section-head">Projects</h2>
+      <div id="projects" class="black-border contentLimit"></div>
+    </div>
+    <div id="awards-frame" class="black">
+      <h2 class="contentLimit section-head">Awards</h2>
+      <div id="awards" class="white-border contentLimit"></div>
+    </div>
+    <div id="map-frame" class="white">
+      <h2 class="contentLimit section-head">Where I've Lived</h2>
+      <div id="mapDiv" class="black-border contentLimit"></div>
     </div>
     <div id="letsConnect" class='dark'>
       <ul id="footerContacts" class="flex-box contentLimitWide"></ul>
     </div>
   </div>
   <script type="text/javascript">
+    $('#floating-head').fixedsticky();
     $('#option-container').fixedsticky();
   </script>
   <script src="js/cv.js"></script>

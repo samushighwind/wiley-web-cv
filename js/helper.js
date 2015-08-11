@@ -15,7 +15,7 @@ var HTMLskills = '<li class="flex-item"><span class="white-text">%data%<span cla
 // end bio fields
 
 // begin general fields
-var HTMLitemStart = '<div class="%type%-entry contentLimit"></div>';
+var HTMLitemStart = '<div class="%type%-entry"></div>';
 var HTMLitemHeading = '<a href="#" target="_blank">%data%';
 var HTMLitemTagline = ' - %data%</a>';
 var HTMLitemDates = '<div class="date-text">%data%</div>';

@@ -154,6 +154,7 @@ var view = {
 
 		view.render();
 		view.adjustHeaderSize();
+		view.adjustSectionFiller();
 	},
 	render: function() {
 		// renders content on page (function called only once)
@@ -190,8 +191,15 @@ var view = {
 		view.loadSection("projects", data.projects, "black");
 		view.loadSection("awards", data.awards, "white");
 	},
+	adjustSectionFiller: function() {
+		var filler = $('#floating-head').height() + 10;
+		$(".section-head").css('padding-top', filler + 'px');
+	},
 	adjustHeaderSize: function() {
-		$("#headerBack").css("min-height", $(window).height());
+		$("#headerBack").css(
+			"min-height",
+			$(window).height() - $('#floating-head').height()
+		);
 	},
 	loadBio: function(bio) {
 		// loads bio information to screen
@@ -204,9 +212,9 @@ var view = {
 
 		// added in reverse order since we're prepending
 		if(bio.role) {
-			$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+			$("#title").prepend(HTMLheaderRole.replace("%data%", bio.role));
 		}
-		$("#header").prepend(HTMLheaderName.replace("%data%", intlName(bio.name)));
+		$("#title").prepend(HTMLheaderName.replace("%data%", intlName(bio.name)));
 
 		for(var contact in bio.contacts) {
 			var data = bio.contacts[contact];
@@ -285,8 +293,8 @@ var view = {
 		var entryClass = type + "-entry";
 		var moreClass = "more-" + type;
 
-		// places section title and clears all other section content 
-		$('#' + sectionID).html('<h2 class="contentLimit">' + upperType + '</h2>');
+		// clears all content
+		$('#' + sectionID).empty();
 
 		if(items.length === 0) {
 
@@ -373,7 +381,7 @@ var view = {
 				var triID = type + "Tri";
 
 				// adds 'read more' button
-				$('#' + sectionID).append('<div class="contentLimit"><p id="' + readMoreID + '" class="more-link"><img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more</p></div>');
+				$('#' + sectionID).append('<div class="see-more-entry"><p id="' + readMoreID + '" class="more-link"><img id="' + triID + '" src="images/tri-down-' + color + '.png"/>see more</p></div>');
 
 				// sets up smooth show/hide
 				$('.' + moreClass).hide();
