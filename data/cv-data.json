@@ -47,6 +47,7 @@
       "InDesign",
       "git",
       "WordPress",
+      "GIMP",
       "NationBuilder",
       "SPSS",
       "ATLAS.ti"
@@ -202,6 +203,15 @@
   },
   "projects": {
     "projects": [
+      {
+        "name": "Crocodile Clicker",
+        "dates": "August 2015",
+        "description": "It's five mischievous crocodiles versus your computer mouse, in this brand-new clicking adventure! Click your way to the finish; if you get tired and have to come back later, your place is saved automatically! This built-from-scratch web app employs strict separation of model and view concerns, and has two implementations—<a href=\"https://github.com/benwiley4000/crocodile-clicker-vanilla\" target=\"_blank\">one written in plain JavaScript with jQuery</a>, and <a href=\"https://github.com/benwiley4000/crocodile-clicker-knockout\" target=\"_blank\">another using the Knockout.js framework</a>.",
+        "url": "http://crocodileclicker.benwiley.org/",
+        "tags": [
+          "computers"
+        ]
+      },
       {
         "name": "Narrative Identity as Means for Understanding and Criticizing <i>The Two-Income Trap</i>",
         "dates": "May 2015",
