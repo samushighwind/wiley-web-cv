@@ -494,7 +494,7 @@ span a {
 }
 
 .error {
-  position: relative;
+  position: absolute;
   top: 25px;
   left: 25px;
   background-color: rgba(255, 0, 0, 0.5);
