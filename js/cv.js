@@ -411,5 +411,9 @@ $.getJSON(fetch_url, function(data) {
 	$('#main').show();
     octopus.init(data);
 }).error(function(e) {
-    $('body').append('<div class="error"><h2>ERROR: Data missing at ' + fetch_url + '</h2></div>');
+	var errorDiv = $('<div class="error"/>');
+	var errorMsg1 = 'ERROR: Could not retrieve ' + fetch_url;
+	var errorMsg2 = 'File could be missing, or protocol could be bad.';
+	errorDiv.append('<h2>' + errorMsg1 + '</h2><h2>' + errorMsg2 + '</h2>');
+    $('body').append(errorDiv);
 });
