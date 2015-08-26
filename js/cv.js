@@ -56,7 +56,7 @@ var octopus = {
 		var bio = data.bio;
 
 		var schools = [];
-		for(var i = 0; i < data.education.schools.length; i++) {
+		for(var i = 0, len = data.education.schools.length; i < len; i++) {
 			var school = data.education.schools[i];
 			if(school.tags && octopus.match(school.tags, visibleTags)) {
 				schools.push(school);
@@ -64,7 +64,7 @@ var octopus = {
 		}
 
 		var jobs = [];
-		for(var i = 0; i < data.work.jobs.length; i++) {
+		for(var i = 0, len = data.work.jobs.length; i < len; i++) {
 			var job = data.work.jobs[i];
 			if(job.tags && octopus.match(job.tags, visibleTags)) {
 				jobs.push(job);
@@ -72,7 +72,7 @@ var octopus = {
 		}
 
 		var projects = [];
-		for(var i = 0; i < data.projects.projects.length; i++) {
+		for(var i = 0, len = data.projects.projects.length; i < len; i++) {
 			var project = data.projects.projects[i];
 			if(project.tags && octopus.match(project.tags, visibleTags)) {
 				projects.push(project);
@@ -80,7 +80,7 @@ var octopus = {
 		}
 
 		var awards = [];
-		for(var i = 0; i < data.awards.awards.length; i++) {
+		for(var i = 0, len = data.awards.awards.length; i < len; i++) {
 			var award = data.awards.awards[i];
 			if(award.tags && octopus.match(award.tags, visibleTags)) {
 				awards.push(award);
@@ -104,9 +104,10 @@ var octopus = {
 	},
 	match: function(arr1, arr2) {
 		// returns true if the two given arrays contain a common element
-
-		for(var i = 0; i < arr1.length; i++) {
-			for(var j = 0; j < arr2.length; j++) {
+		var len1 = arr1.length;
+		var len2 = arr2.length;
+		for(var i = 0; i < len1; i++) {
+			for(var j = 0; j < len2; j++) {
 				if(arr1[i] === arr2[j]) {
 					return true;
 				}
@@ -250,7 +251,7 @@ var view = {
 
 		if(bio.interests) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Interests"));
-			for(var i = 0; i < bio.interests.length; i++) {
+			for(var i = 0, len = bio.interests.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.interests[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -258,7 +259,7 @@ var view = {
 
 		if(bio.languages) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Languages"));
-			for(var i = 0; i < bio.languages.length; i++) {
+			for(var i = 0, len = bio.languages.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.languages[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -266,7 +267,7 @@ var view = {
 
 		if(bio.programLang) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Other Languages"));
-			for(var i = 0; i < bio.programLang.length; i++) {
+			for(var i = 0, len = bio.programLang.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.programLang[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -274,7 +275,7 @@ var view = {
 
 		if(bio.libraries) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Libraries & Frameworks"));
-			for(var i = 0; i < bio.libraries.length; i++) {
+			for(var i = 0, len = bio.libraries.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.libraries[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -282,7 +283,7 @@ var view = {
 
 		if(bio.programs) {
 			$("#header").append(HTMLskillsStart.replace("%data%", "Programs"));
-			for(var i = 0; i < bio.programs.length; i++) {
+			for(var i = 0, len = bio.programs.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.programs[i]));
 			}
 			$(".comma:last").css("display", "none");
@@ -306,7 +307,7 @@ var view = {
 
 		} else {
 
-			for(var i = 0; i < items.length; i++) {
+			for(var i = 0, len1 = items.length; i < len1; i++) {
 
 				var item = items[i];
 
@@ -360,7 +361,7 @@ var view = {
 
 				if(item.courses) {
 					$('.' + entryClass + ":last").append(HTMLschoolCourses);
-					for(var j = 0; j < item.courses.length; j++) {
+					for(var j = 0, len2 = item.courses.length; j < len2; j++) {
 						var course = item.courses[j];
 						var formattedCourse = HTMLschoolCourse.replace("%data%", course.title).replace("#", course.url);
 						$("." + entryClass + " .courses:last").append(formattedCourse);
@@ -369,7 +370,7 @@ var view = {
 
 				if(item.highlights) {
 					$('.' + entryClass + ":last").append(HTMLexprHighlights);
-					for(var j = 0; j < item.highlights.length; j++) {
+					for(var j = 0, len2 = item.highlights.length; j < len2; j++) {
 						var formattedHighlight = HTMLexprHighlight.replace("%data%", item.highlights[j]);
 						$("." + entryClass + " .highlights:last").append(formattedHighlight);
 					}
