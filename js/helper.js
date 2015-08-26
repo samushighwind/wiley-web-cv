@@ -89,13 +89,6 @@ function initializeMap() {
         locations.push(data.jobs[job].location);
     }
 
-    // removes undefined locations from list
-    for (var i = 0; i < locations.length; i++) {
-      if(!locations[i]) {
-        locations.splice(i, 1);
-      }
-    }
-
     return locations;
   }
 
@@ -176,15 +169,16 @@ function initializeMap() {
 
     // Iterates through the array of locations, creates a search object for each location
     for (var place in locations) {
-
-      // the search request object
-      var request = {
-        query: locations[place]
-      };
-      
-      // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search.
-      service.textSearch(request, callback);
+      if(locations[place]) {
+        // the search request object
+        var request = {
+          query: locations[place]
+        };
+        
+        // Actually searches the Google Maps API for location data and runs the callback
+        // function with the search results after each search.
+        service.textSearch(request, callback);
+      }
     }
   }
 
