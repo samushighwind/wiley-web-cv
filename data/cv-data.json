@@ -104,6 +104,14 @@
           {
             "title": "JavaScript Design Patterns",
             "url": "https://www.udacity.com/course/javascript-design-patterns--ud989"
+          },
+          {
+            "title": "Website Performance Optimization",
+            "url": "https://www.udacity.com/course/website-performance-optimization--ud884"
+          },
+          {
+            "title": "Browser Rendering Optimization",
+            "url": "https://www.udacity.com/course/browser-rendering-optimization--ud860"
           }
         ],
         "url": "https://www.udacity.com/",
@@ -116,14 +124,13 @@
   "work": {
     "jobs": [
       {
-        "employer": "Energy Justice: Shale Initative",
-        "title": "Summer Fellow",
-        "location": "Scranton, PA, US",
-        "dates": "Summer 2015 (current)",
-        "description": "Providing support to community groups fighting hydraulic fracking and gas infrastructure projects in Northeast Pennsylvania. Projects include a web application for visualizing fracking well violations by company and date, as well as a documentary featuring testimony from locals fighting construction of a gas-fired power plant in their township.",
-        "url": "http://energyjusticesummer.org/",
+        "employer": "Collabra Music",
+        "title": "Software Engineer",
+        "location": "Louisville, KY, US",
+        "dates": "August 2015-present",
+        "description": "Developing a web application that facilitates learning and collaboration for music students and their instructors.",
+        "url": "http://www.collabramusic.com/",
         "tags": [
-          "movements",
           "computers"
         ]
       },
@@ -139,6 +146,18 @@
         ]
       },
       {
+        "employer": "Energy Justice: Shale Initative",
+        "title": "Summer Fellow",
+        "location": "Scranton, PA, US",
+        "dates": "Summer 2015",
+        "description": "Providing support to community groups fighting hydraulic fracking and gas infrastructure projects in Northeast Pennsylvania. Projects include a web application for visualizing fracking well violations by company and date, as well as a documentary featuring testimony from locals fighting construction of a gas-fired power plant in their township.",
+        "url": "http://energyjusticesummer.org/",
+        "tags": [
+          "movements",
+          "computers"
+        ]
+      },
+      {
         "employer": "Davidson College Campus",
         "title": "Student Organizer",
         "location": "Davidson, NC, US",
@@ -148,7 +167,7 @@
           "Organized and received close to $4,000 in total grant funding for long-distance student trips, including Power Shift in Pittsburgh, PA (2013) and the People's Climate March in New York (2014).",
           "Organized a successful student referendum vote calling on the college to divest from fossil fuel companies. Trained student volunteers in petitioning, contact blasting, media, data entry, and advanced organizing skills."
         ],
-        "url": "http://studentsdivest.org/",
+        "url": "http://divestdavidson.org/",
         "tags": [
           "movements"
         ]
