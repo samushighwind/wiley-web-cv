@@ -200,7 +200,8 @@ Uncomment the code below when you're ready to implement a Google Map!
 
 
 // Calls the initializeMap() function when the page loads
-window.addEventListener('load', initializeMap);
+// Short timeout added to dramatically lower chance of weird bugs
+window.addEventListener('load', setTimeout(initializeMap, 400));
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
