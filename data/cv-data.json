@@ -7,7 +7,7 @@
       "facebook": "/benwiley4000",
       "twitter": "@benwiley4000",
       "github": "benwiley4000",
-      "location": "Scranton, PA, US"
+      "location": "Louisville, KY, US"
     },
     "interests": [
       "Campaign Organizing",
@@ -86,8 +86,8 @@
       },
       {
         "name": "Udacity",
-        "title": "Online Courses in Web/Software Development",
-        "dates": "Summer 2015",
+        "degree": "Nanodegree in Front-End Web Development",
+        "dates": "June 2015-present",
         "courses": [
           {
             "title": "HTML5 Canvas",
@@ -128,7 +128,7 @@
         "title": "Software Engineer",
         "location": "Louisville, KY, US",
         "dates": "August 2015-present",
-        "description": "Developing a web application that facilitates learning and collaboration for music students and their instructors.",
+        "description": "Working in a team developing a web application that facilitates learning and collaboration for music students and their instructors.",
         "url": "http://www.collabramusic.com/",
         "tags": [
           "computers"
@@ -150,11 +150,10 @@
         "title": "Summer Fellow",
         "location": "Scranton, PA, US",
         "dates": "Summer 2015",
-        "description": "Providing support to community groups fighting hydraulic fracking and gas infrastructure projects in Northeast Pennsylvania. Projects include a web application for visualizing fracking well violations by company and date, as well as a documentary featuring testimony from locals fighting construction of a gas-fired power plant in their township.",
+        "description": "Providing support to community groups fighting hydraulic fracking and gas infrastructure projects in Northeast Pennsylvania. Projects include preparing fracking fact sheets for high school students, combing records on legal violations by gas pipeline companies, and interviewing local residents fighting construction of a gas-fired power plant in their township, for a documentary.",
         "url": "http://energyjusticesummer.org/",
         "tags": [
-          "movements",
-          "computers"
+          "movements"
         ]
       },
       {
