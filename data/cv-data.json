@@ -28,24 +28,33 @@
       "Arabic (Beginner)"
     ],
     "programLang": [
+      "JavaScript/Node.js",
       "Java",
       "Python",
       "C++",
       "C",
-      "JavaScript",
+      "SQL",
+      "Bash",
       "HTML5",
       "CSS/SCSS",
       "PHP"
     ],
     "libraries": [
+      "React",
+      "Fluxible",
+      "Backbone.js",
+      "Underscore/Lodash",
       "jQuery",
-      "Liquid",
+      "Liquid (Ruby)",
       "Knockout.js"
     ],
     "programs": [
       "Photoshop",
       "InDesign",
       "git",
+      "npm",
+      "gulp",
+      "Grunt",
       "WordPress",
       "GIMP",
       "NationBuilder",
@@ -87,7 +96,7 @@
       {
         "name": "Udacity",
         "degree": "Nanodegree in Front-End Web Development",
-        "dates": "June 2015-present",
+        "dates": "June 2015-October 2015",
         "courses": [
           {
             "title": "HTML5 Canvas",
@@ -116,6 +125,14 @@
           {
             "title": "Responsive Web Design Fundamentals",
             "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+          },
+          {
+            "title": "Responsive Images",
+            "url": "https://www.udacity.com/course/responsive-images--ud882"
+          },
+          {
+            "title": "Learn Backbone.js",
+            "url": "https://www.udacity.com/course/learn-backbonejs--ud990"
           }
         ],
         "url": "https://www.udacity.com/",
@@ -128,7 +145,7 @@
   "work": {
     "jobs": [
       {
-        "employer": "Collabra Music",
+        "employer": "Collabra",
         "title": "Software Engineer",
         "location": "Louisville, KY, US",
         "dates": "August 2015-present",
