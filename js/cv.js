@@ -241,23 +241,27 @@ var view = {
 		}
 
 		if(bio.bioPic) {
-			$("#header").append(HTMLbioPic.replace("%data%", "images/" + bio.bioPic));
-		}
-
-		if(bio.welcomeMsg) {
-			$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg));
+			$("#summary").prepend(HTMLbioPic.replace("%data%", "images/" + bio.bioPic));
 		}
 
 		if(bio.interests) {
-			$("#header").append(HTMLskillsStart.replace("%data%", "Interests"));
+			$("#skills-container").append(HTMLskillsStart.replace("%data%", "Interests"));
 			for(var i = 0, len = bio.interests.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.interests[i]));
 			}
 			$(".comma:last").css("display", "none");
 		}
 
+		if(bio.programs) {
+			$("#skills-container").append(HTMLskillsStart.replace("%data%", "Programs"));
+			for(var i = 0, len = bio.programs.length; i < len; i++) {
+				$(".skills:last").append(HTMLskills.replace("%data%", bio.programs[i]));
+			}
+			$(".comma:last").css("display", "none");
+		}
+
 		if(bio.languages) {
-			$("#header").append(HTMLskillsStart.replace("%data%", "Languages"));
+			$("#skills-container").append(HTMLskillsStart.replace("%data%", "Languages"));
 			for(var i = 0, len = bio.languages.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.languages[i]));
 			}
@@ -265,7 +269,7 @@ var view = {
 		}
 
 		if(bio.programLang) {
-			$("#header").append(HTMLskillsStart.replace("%data%", "Other Languages"));
+			$("#skills-container").append(HTMLskillsStart.replace("%data%", "Other Languages"));
 			for(var i = 0, len = bio.programLang.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.programLang[i]));
 			}
@@ -273,17 +277,17 @@ var view = {
 		}
 
 		if(bio.libraries) {
-			$("#header").append(HTMLskillsStart.replace("%data%", "Libraries & Frameworks"));
+			$("#skills-container").append(HTMLskillsStart.replace("%data%", "JS Libraries & Frameworks"));
 			for(var i = 0, len = bio.libraries.length; i < len; i++) {
 				$(".skills:last").append(HTMLskills.replace("%data%", bio.libraries[i]));
 			}
 			$(".comma:last").css("display", "none");
 		}
 
-		if(bio.programs) {
-			$("#header").append(HTMLskillsStart.replace("%data%", "Programs"));
-			for(var i = 0, len = bio.programs.length; i < len; i++) {
-				$(".skills:last").append(HTMLskills.replace("%data%", bio.programs[i]));
+		if(bio.jsUtils) {
+			$("#skills-container").append(HTMLskillsStart.replace("%data%", "JS Utilities"));
+			for(var i = 0, len = bio.jsUtils.length; i < len; i++) {
+				$(".skills:last").append(HTMLskills.replace("%data%", bio.jsUtils[i]));
 			}
 			$(".comma:last").css("display", "none");
 		}

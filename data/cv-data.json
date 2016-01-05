@@ -15,11 +15,22 @@
       "Social Theory",
       "Movements",
       "Open-Source",
+      "Web",
       "AI",
       "Linux",
       "Android",
       "Jazz",
       "Video Games"
+    ],
+    "programs": [
+      "git",
+      "Photoshop",
+      "InDesign",
+      "WordPress",
+      "GIMP",
+      "NationBuilder",
+      "SPSS",
+      "ATLAS.ti"
     ],
     "languages": [
       "French (Advanced)",
@@ -28,7 +39,7 @@
       "Arabic (Beginner)"
     ],
     "programLang": [
-      "JavaScript/ES6/Node.js",
+      "JavaScript/ES6/node.js",
       "Java",
       "Python",
       "C++",
@@ -43,24 +54,20 @@
       "React",
       "Fluxible",
       "Backbone.js",
+      "Express",
+      "Sequelize",
       "Underscore/Lodash",
       "jQuery",
-      "Liquid (Shopify)",
-      "Knockout.js"
+      "Knockout"
     ],
-    "programs": [
-      "Photoshop",
-      "InDesign",
-      "git",
+    "jsUtils": [
       "npm",
+      "babel",
       "gulp",
+      "jshint",
       "webpack",
-      "Grunt",
-      "WordPress",
-      "GIMP",
-      "NationBuilder",
-      "SPSS",
-      "ATLAS.ti"
+      "Browserify",
+      "Grunt"
     ],
     "bioPic": "ben-cropped-small.jpg"
   },
