@@ -28,7 +28,7 @@
       "Arabic (Beginner)"
     ],
     "programLang": [
-      "JavaScript/Node.js",
+      "JavaScript/ES6/Node.js",
       "Java",
       "Python",
       "C++",
@@ -45,7 +45,7 @@
       "Backbone.js",
       "Underscore/Lodash",
       "jQuery",
-      "Liquid (Ruby)",
+      "Liquid (Shopify)",
       "Knockout.js"
     ],
     "programs": [
@@ -54,6 +54,7 @@
       "git",
       "npm",
       "gulp",
+      "webpack",
       "Grunt",
       "WordPress",
       "GIMP",
@@ -149,7 +150,12 @@
         "title": "Software Engineer",
         "location": "Louisville, KY, US",
         "dates": "August 2015-present",
-        "description": "Working in a team developing a web application that facilitates learning and collaboration for music students and their instructors.",
+        "description": "Part of team developing web app facilitating learning and collaboration for music students and instructors with in-browser recording and streaming technology. Tools: JavaScript, Node.js, React.js, Fluxible, Express.js, MySQL, PHP.",
+        "highlights": [
+          "Created interactive keyboard and metronome tools to assist musicians recording video and audio (see <a href=\"#projects-frame\">Projects section</a>).",
+          "Designed/implemented achievements system based on student video and audio recording data. Created new database schema, algorithm for efficiently calculating achievements, and failsafe means for tracking multi-day recording streaks, even in event of extended database failure.",
+          "Forked existing open-source projects to implement new features, and contributed changes back to those projects."
+        ],
         "url": "http://www.collabramusic.com/",
         "tags": [
           "computers"
@@ -164,17 +170,6 @@
         "tags": [
           "movements",
           "computers"
-        ]
-      },
-      {
-        "employer": "Energy Justice: Shale Initative",
-        "title": "Summer Fellow",
-        "location": "Scranton, PA, US",
-        "dates": "Summer 2015",
-        "description": "Providing support to community groups fighting hydraulic fracking and gas infrastructure projects in Northeast Pennsylvania. Projects include preparing fracking fact sheets for high school students, combing records on legal violations by gas pipeline companies, and interviewing local residents fighting construction of a gas-fired power plant in their township, for a documentary.",
-        "url": "http://energyjusticesummer.org/",
-        "tags": [
-          "movements"
         ]
       },
       {
@@ -242,10 +237,10 @@
   "projects": {
     "projects": [
       {
-        "name": "Crocodile Clicker",
-        "dates": "August 2015",
-        "description": "It's five mischievous crocodiles versus your computer mouse, in this brand-new clicking adventure! Click your way to the finish; if you get tired and have to come back later, your place is saved automatically! This built-from-scratch web app employs strict separation of model and view concerns, and has two implementations—<a href=\"https://github.com/benwiley4000/crocodile-clicker-vanilla\" target=\"_blank\">one written in plain JavaScript with jQuery</a>, and <a href=\"https://github.com/benwiley4000/crocodile-clicker-knockout\" target=\"_blank\">another using the Knockout.js framework</a>.",
-        "url": "http://crocodileclicker.benwiley.org/",
+        "name": "Web Keyboard and Metronome Tools for Collabra",
+        "dates": "November 2015",
+        "description": "Interactive keyboard and metronome tools, written with the React JavaScript library and used by musicians for adjusting tune and tempo while recording video and audio in the web browser. Can be demoed <a href=\"http://collabra-pitch-tool.benwiley.org\" target=\"_blank\">here</a>.",
+        "url": "http://collabra-pitch-tool.benwiley.org",
         "tags": [
           "computers"
         ]
@@ -273,7 +268,7 @@
         "name": "Is Social Movement Organizing Easier in the Age of Social Media?",
         "dates": "April 2015",
         "description": "A discussion of new assets and difficulties social movements face in the age of social media, using examples of the Zapatistas, Anonymous, the Arab Spring, Occupy, and Kony 2012.",
-        "url": "files/goffman-beck.pdf",
+        "url": "files/movement-organizing-social-media.pdf",
         "tags": [
           "movements",
           "computers",

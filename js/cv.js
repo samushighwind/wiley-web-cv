@@ -126,9 +126,8 @@ var view = {
 	init: function() {
 		// adds event listeners and renders the page content
 
-		// adjusts the height of the header section to fit the changing size of the window.
+		// adjusts the vertical offset of the section content based on floating head size
 		$(window).resize(function() {
-			view.adjustHeaderSize();
 			view.adjustFiller();
 		});
 
@@ -155,7 +154,6 @@ var view = {
 		});
 
 		view.render();
-		view.adjustHeaderSize();
 		view.adjustFiller();
 	},
 	render: function() {
@@ -198,12 +196,6 @@ var view = {
 		var sectionFiller = filler + 10;
 		$('#headerBack').css('padding-top', filler + 'px');
 		$('.section-head').css('padding-top', sectionFiller + 'px');
-	},
-	adjustHeaderSize: function() {
-		$('#headerBack').css(
-			"min-height",
-			$(window).height() - $('#floating-head').height()
-		);
 	},
 	loadBio: function(bio) {
 		// loads bio information to screen
