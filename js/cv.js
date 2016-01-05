@@ -17,7 +17,7 @@ var model = {
 				computers: true,
 				sociology: true,
 				other: true
-			}
+			};
 			localStorage.filters = JSON.stringify(filters);
 		}
 	},
@@ -41,14 +41,21 @@ var model = {
 };
 
 var octopus = {
-	getData: function() {
+	getData: function(getAll) {
 		// returns data needed for rendering
 
 		var data = model.getCVData();
 		var filters = model.getFilters();
 		var visibleTags = [];
-		$.each(filters, function(category, value) {
-			if(value === true ) {
+		if(!queryStringProperties.disableByDefault) {
+			$.each(filters, function(category, value) {
+				if(value === true ) {
+					visibleTags.push(category);
+				}
+			});
+		}
+		Object.keys(queryStringProperties).forEach(function(category) {
+			if(queryStringProperties[category]) {
 				visibleTags.push(category);
 			}
 		});
@@ -58,7 +65,7 @@ var octopus = {
 		var schools = [];
 		for(var i = 0, len = data.education.schools.length; i < len; i++) {
 			var school = data.education.schools[i];
-			if(school.tags && octopus.match(school.tags, visibleTags)) {
+			if(getAll || (school.tags && octopus.match(school.tags, visibleTags))) {
 				schools.push(school);
 			}
 		}
@@ -66,7 +73,7 @@ var octopus = {
 		var jobs = [];
 		for(var i = 0, len = data.work.jobs.length; i < len; i++) {
 			var job = data.work.jobs[i];
-			if(job.tags && octopus.match(job.tags, visibleTags)) {
+			if(getAll || (job.tags && octopus.match(job.tags, visibleTags))) {
 				jobs.push(job);
 			}
 		}
@@ -74,7 +81,7 @@ var octopus = {
 		var projects = [];
 		for(var i = 0, len = data.projects.projects.length; i < len; i++) {
 			var project = data.projects.projects[i];
-			if(project.tags && octopus.match(project.tags, visibleTags)) {
+			if(getAll || (project.tags && octopus.match(project.tags, visibleTags))) {
 				projects.push(project);
 			}
 		}
@@ -82,7 +89,7 @@ var octopus = {
 		var awards = [];
 		for(var i = 0, len = data.awards.awards.length; i < len; i++) {
 			var award = data.awards.awards[i];
-			if(award.tags && octopus.match(award.tags, visibleTags)) {
+			if(getAll || (award.tags && octopus.match(award.tags, visibleTags))) {
 				awards.push(award);
 			}
 		}

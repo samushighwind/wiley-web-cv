@@ -69,7 +69,7 @@ function initializeMap() {
     // initializes an empty array
     var locations = [];
 
-    var data = octopus.getData();
+    var data = octopus.getData(true);
 
     // adds the single location property from bio to the locations array
     locations.push(data.bio.contacts.location);
